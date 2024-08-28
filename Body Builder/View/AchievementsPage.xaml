@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Body_Builder.Model"
+             x:Class="Body_Builder.AchievementsPage"
+             BackgroundColor="LightSkyBlue"
+             Title="{Binding Title}"
+    
+             xmlns:viewmodel="clr-namespace:Body_Builder.ViewModel"
+             x:DataType="viewmodel:AchievementsVM">
+    <Grid 
+          ColumnSpacing="5"
+          RowDefinitions="Auto,*"
+          RowSpacing="0"
+          Padding="10">
+        <Frame
+            Grid.ColumnSpan="3"
+            BackgroundColor="#f7f7f7">
+            <Image
+            Aspect="AspectFit"
+            BackgroundColor="#f7f7f7"
+            Source="graph.png"
+            HeightRequest="200"
+            Grid.ColumnSpan="3"
+            Grid.RowSpan="1"
+            Grid.Row="0"/>
+        </Frame>
+        <CollectionView BackgroundColor="LightSkyBlue" Grid.ColumnSpan="3" Grid.Row="1">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type model:Achievement}">
+                    <model:Achievement
+                    Title="Getting Started"
+                    Image="trophy.png"
+                    Details="Do your first workout" />
+                    <model:Achievement
+                    Title="Bodybuilder"
+                    Image="trophy.png"
+                    Details="Lift a total of 100,000 lbs" />
+                    <model:Achievement
+                    Title="Number 1"
+                    Image="trophy.png"
+                    Details="Reach 1st place during a competition" />
+                    <model:Achievement
+                    Title="Monkey Mode"
+                    Image="trophy.png"
+                    Details="Do a workout with over 15 exercises" />
+                    <model:Achievement
+                    Title="Back to Basics"
+                    Image="trophy.png"
+                    Details="Follow a tutorial" />
+                    <model:Achievement
+                    Title="Add new goal"
+                    Image="plus.png"
+                    Details="" />
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Achievement">
+                    <Grid Padding="5">
+                        <Frame
+                            BorderColor = "#DDDDDD"
+                            HasShadow = "{OnPlatform iOS=false, MacCatalyst=false, Default=true}"
+                            Padding = "0"
+                            CornerRadius = "10"
+                            IsClippedToBounds = "True">
+                            <HorizontalStackLayout Padding="10" Spacing="5" BackgroundColor="DodgerBlue">
+                                <Frame
+                                    BackgroundColor="AliceBlue"
+                                    CornerRadius="50"
+                                    IsClippedToBounds="False"
+                                    WidthRequest="90"
+                                    HeightRequest="90"
+                                    Padding="0">
+                                    <Image
+                                        Aspect="AspectFit"
+                                        WidthRequest="75"
+                                        Source="{Binding Image}"/>
+                                </Frame>
+                                <VerticalStackLayout VerticalOptions="Center">
+                                    <Label Text="{Binding Title}" FontSize="25" HorizontalTextAlignment="Center" TextColor="AliceBlue"/>
+                                    <Label Text="{Binding Details}" FontSize="15" HorizontalTextAlignment="Center" TextColor="AliceBlue" WidthRequest="200"/>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+    
+
+</ContentPage>

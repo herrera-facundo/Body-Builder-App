@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Body_Builder.Model"
+             x:Class="Body_Builder.HomePage"
+             BackgroundColor="{StaticResource MainBackground}"
+             
+             xmlns:viewmodel="clr-namespace:Body_Builder.ViewModel"
+             x:DataType="viewmodel:HomeVM">
+    <Grid RowDefinitions="Auto,Auto,*,*" ColumnDefinitions="*,*" ColumnSpacing="10" RowSpacing="10">
+        <Border Style="{StaticResource PrimaryWidgetBorder}" Grid.Row="0" Grid.ColumnSpan="2"  Grid.RowSpan="1">
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <Label Text="Todays Schedule (Tue, 04/02)" FontSize="20" TextColor="LightGray" />
+                <HorizontalStackLayout>
+                    <Label Text="Upper Body" TextColor="White" FontSize="50" ></Label>
+                    <Button Margin="10,16,10,10"  HorizontalOptions="Start" Text=">>" Style="{StaticResource PrimaryButton}" FontSize="15" BackgroundColor="#04c4c1">
+                    </Button>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Border>
+        <Frame BackgroundColor="#40403e" BorderColor="#04c4c1" Margin="10,10,0,10" CornerRadius="10" HasShadow="True" Grid.Row="1" Grid.Column="0">
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <Label Text="Calories Burned" FontSize="20" TextColor="LightGray" />
+                <Label Text="500" TextColor="White" FontSize="50" />
+            </StackLayout>
+        </Frame>
+        <Frame BackgroundColor="#40403e" BorderColor="#04c4c1" Margin="0,10,10,10" CornerRadius="10" HasShadow="True" Grid.Row="1" Grid.Column="1">
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <Label Text="Steps" FontSize="20" TextColor="LightGray" />
+                <Label Text="6,200" TextColor="White" FontSize="50" />
+            </StackLayout>
+        </Frame>
+
+        <Frame BackgroundColor="#40403e" BorderColor="#04c4c1" Margin="10,10,0,10" CornerRadius="10" HasShadow="True" Grid.Row="2" Grid.Column="0">
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <Label Text="Current Rank" FontSize="20" TextColor="LightGray" />
+                <Label Text="Plastic 2" TextColor="White" FontSize="35"/>
+                <Label Text="250xp to next rank" TextColor="LightGray" FontSize="15" Margin="0,-5,0,0"></Label>
+            </StackLayout>
+        </Frame>
+        <Frame BackgroundColor="#40403e" BorderColor="#04c4c1" Margin="0,10,10,10" CornerRadius="10" HasShadow="True" Grid.Row="2" Grid.Column="1">
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <Label Text="Daily Goal" FontSize="20" TextColor="LightGray" />
+                <Label Text="75%" TextColor="White" FontSize="50" />
+                <Label Text="complete" TextColor="LightGray" FontSize="15" Margin="0,-10,0,0"></Label>
+            </StackLayout>
+        </Frame>
+
+        <Frame BackgroundColor="#40403e" BorderColor="Orange" Margin="10" CornerRadius="10" HasShadow="True" Grid.Row="3" Grid.ColumnSpan="2"  Grid.RowSpan="1">
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                <Label Text="Daily Quest" FontSize="20" TextColor="LightGray" />
+                <Label Text="Finish 3 sets of Lat Pulldowns with 120lbs or more" LineBreakMode="WordWrap" TextColor="White" FontSize="20"></Label>
+
+            </StackLayout>
+        </Frame>
+
+
+    </Grid>
+
+
+
+</ContentPage>

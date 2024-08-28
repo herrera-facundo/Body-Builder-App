@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:model="clr-namespace:Body_Builder.Model"
+			 x:Class="Body_Builder.MakeWorkoutPage"
+			 BackgroundColor="{StaticResource MainBackground}"
+			 
+			 xmlns:viewmodel="clr-namespace:Body_Builder.ViewModel"
+			 x:DataType="viewmodel:MakeWorkoutVM">
+
+	<Grid
+		  ColumnSpacing="5"
+		  RowDefinitions="Auto,*"
+		  RowSpacing="5"
+		  Padding="10">
+		<HorizontalStackLayout Spacing="50" Grid.Row="0">
+			<Label Text="Add Exercises" TextColor="LightGray" Margin="10,10,0,0" FontSize="35" FontAttributes="Bold" FontFamily="Sans"></Label>
+			<Button Text="Finish Workout" Command="{Binding GoToWorkoutCommand}"/>
+		</HorizontalStackLayout>
+		
+		<CollectionView
+			ItemsSource="{Binding Template.ExerciseList}"
+			SelectionMode="None"
+			Grid.Row="1">
+
+			<CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Exercise">
+                    <Border HeightRequest="200"
+							  Padding="5"
+							  Style="{StaticResource AccentSecondaryWidgetBorder}">
+                        <VerticalStackLayout VerticalOptions="Center" Padding="15,0,0,0">
+								<Entry x:Name="Name of exercise" Placeholder="Enter Exercise Name" Text="{Binding Name}"/>
+								<Entry x:Name="Sets" Placeholder="Enter Number of Sets" Text="{Binding Sets}"/>
+								<Entry x:Name="Reps" Placeholder="Enter Number of Reps" Text="{Binding Reps}"/>
+								<Entry x:Name="Weight" Placeholder="Enter Weight" Text="{Binding Weight}"/>
+							</VerticalStackLayout>
+					</Border>
+                </DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
+	</Grid>
+
+</ContentPage>

@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Body Builder</name>
+    </assembly>
+    <members>
+        <member name="T:Body_Builder.Model.Exercise">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Body_Builder.Model.Exercise.Completed">
+            <inheritdoc cref="F:Body_Builder.Model.Exercise.completed"/>
+        </member>
+        <member name="F:Body_Builder.Model.Exercise.completedExerciseCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.Model.Exercise.CompletedExerciseCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.Model.Exercise.CompletedExerciseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Body_Builder.Model.Exercise.CompletedExercise"/>.</summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Body_Builder.Model.ExerciseRepository" -->
+        <member name="M:Body_Builder.Model.ExerciseRepository.getExercisesFromAppData">
+            <summary>
+            This Method will open ExerciseData.txt, read each line, process that line as an Exercise, and add it to _exercises list
+            </summary>
+        </member>
+        <member name="M:Body_Builder.Model.ExerciseRepository.storeExercisesInAppData">
+            <summary>
+            This method will wipe the contents of ExerciseData.txt in the local App Data
+            and then write the contents of each element in _exercises on their own line.
+            
+            Each Line of an exercise will be formated as:
+            Name,Sets,Reps,Weight
+            </summary>
+        </member>
+        <member name="M:Body_Builder.Model.ExerciseRepository.editExercise(System.Int32,Body_Builder.Model.Exercise)">
+            <summary>
+            This method will search _exercise list to find the exercise with the cooresponding exerciseId. If it exists, it will change the Exercise attributes to match the second arguement
+            </summary>
+            <param name="exerciseId"></param>
+            <param name="exercise"></param>
+        </member>
+        <member name="M:Body_Builder.Model.ExerciseRepository.AddExercise(Body_Builder.Model.Exercise)">
+            <summary>
+            This method will accept an Exercise parameter and append it to the list. It's contact Id
+            </summary>
+            <param name="exercise"></param>
+        </member>
+        <member name="T:Body_Builder.Model.Workout">
+            <inheritdoc/>
+        </member>
+        <member name="F:Body_Builder.Model.Workout.goToWorkingOutCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.Model.Workout.GoToWorkingOutCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.Model.Workout.GoToWorkingOutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Body_Builder.Model.Workout.GoToWorkingOut"/>.</summary>
+        </member>
+        <member name="T:Body_Builder.Model.WorkoutManager">
+            <inheritdoc/>
+        </member>
+        <member name="P:Body_Builder.Model.WorkoutManager.WorkoutList">
+            <inheritdoc cref="F:Body_Builder.Model.WorkoutManager.workoutList"/>
+        </member>
+        <member name="T:Body_Builder.ViewModel.BaseVM">
+            <inheritdoc/>
+        </member>
+        <member name="P:Body_Builder.ViewModel.BaseVM.Title">
+            <inheritdoc cref="F:Body_Builder.ViewModel.BaseVM.title"/>
+        </member>
+        <member name="T:Body_Builder.ViewModel.MakeWorkoutVM">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Body_Builder.ViewModel.MakeWorkoutVM.Template">
+            <inheritdoc cref="F:Body_Builder.ViewModel.MakeWorkoutVM.template"/>
+        </member>
+        <member name="F:Body_Builder.ViewModel.MakeWorkoutVM.goToWorkoutCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.ViewModel.MakeWorkoutVM.GoToWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.ViewModel.MakeWorkoutVM.GoToWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Body_Builder.ViewModel.MakeWorkoutVM.GoToWorkout"/>.</summary>
+        </member>
+        <member name="T:Body_Builder.ViewModel.SummaryVM">
+            <inheritdoc/>
+        </member>
+        <member name="F:Body_Builder.ViewModel.SummaryVM.goToWorkoutCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.ViewModel.SummaryVM.GoToWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.ViewModel.SummaryVM.GoToWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Body_Builder.ViewModel.SummaryVM.GoToWorkout"/>.</summary>
+        </member>
+        <member name="T:Body_Builder.ViewModel.WorkingOutVM">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkingOutVM.CurrentWorkout">
+            <inheritdoc cref="F:Body_Builder.ViewModel.WorkingOutVM.currentWorkout"/>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkingOutVM.CaloriesBurned">
+            <inheritdoc cref="F:Body_Builder.ViewModel.WorkingOutVM.caloriesBurned"/>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkingOutVM.TimeElapsed">
+            <inheritdoc cref="F:Body_Builder.ViewModel.WorkingOutVM.timeElapsed"/>
+        </member>
+        <member name="F:Body_Builder.ViewModel.WorkingOutVM.startWorkoutCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.ViewModel.WorkingOutVM.StartWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkingOutVM.StartWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Body_Builder.ViewModel.WorkingOutVM.StartWorkout"/>.</summary>
+        </member>
+        <member name="F:Body_Builder.ViewModel.WorkingOutVM.endWorkoutCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.ViewModel.WorkingOutVM.EndWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkingOutVM.EndWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Body_Builder.ViewModel.WorkingOutVM.EndWorkout"/>.</summary>
+        </member>
+        <member name="F:Body_Builder.ViewModel.WorkingOutVM.toggleTimerCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.ViewModel.WorkingOutVM.ToggleTimerCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkingOutVM.ToggleTimerCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:Body_Builder.ViewModel.WorkingOutVM.ToggleTimer"/>.</summary>
+        </member>
+        <member name="F:Body_Builder.ViewModel.WorkingOutVM.goToSummaryCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.ViewModel.WorkingOutVM.GoToSummaryCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkingOutVM.GoToSummaryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Body_Builder.ViewModel.WorkingOutVM.GoToSummary"/>.</summary>
+        </member>
+        <member name="F:Body_Builder.ViewModel.WorkingOutVM.completedClickedCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.ViewModel.WorkingOutVM.CompletedClickedCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkingOutVM.CompletedClickedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:Body_Builder.ViewModel.WorkingOutVM.CompletedClicked(Body_Builder.Model.Exercise)"/>.</summary>
+        </member>
+        <member name="T:Body_Builder.ViewModel.WorkoutVM">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkoutVM.Manager">
+            <inheritdoc cref="F:Body_Builder.ViewModel.WorkoutVM.manager"/>
+        </member>
+        <member name="F:Body_Builder.ViewModel.WorkoutVM.goToMakeWorkoutCommand">
+            <summary>The backing field for <see cref="P:Body_Builder.ViewModel.WorkoutVM.GoToMakeWorkoutCommand"/>.</summary>
+        </member>
+        <member name="P:Body_Builder.ViewModel.WorkoutVM.GoToMakeWorkoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:Body_Builder.ViewModel.WorkoutVM.GoToMakeWorkout"/>.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Completed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Completed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.WorkoutList">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "WorkoutList" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Template">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Template" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentWorkout">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentWorkout" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CaloriesBurned">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CaloriesBurned" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TimeElapsed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TimeElapsed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Manager">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Manager" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Completed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Completed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.WorkoutList">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "WorkoutList" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Template">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Template" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentWorkout">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentWorkout" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CaloriesBurned">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CaloriesBurned" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TimeElapsed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TimeElapsed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Manager">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Manager" generated properties.</summary>
+        </member>
+    </members>
+</doc>

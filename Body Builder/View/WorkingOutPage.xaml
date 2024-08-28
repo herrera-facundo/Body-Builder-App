@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Body_Builder.Model"
+             x:Class="Body_Builder.WorkingOutPage"
+             BackgroundColor="{StaticResource MainBackground}"
+             
+             xmlns:viewmodel="clr-namespace:Body_Builder.ViewModel"
+             x:DataType="viewmodel:WorkingOutVM">
+
+    <Grid RowDefinitions="Auto,*" Padding="10">
+        <StackLayout Padding="10" Grid.Row="0">
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Label Text="{Binding Title}"/>
+                    <Label Text="{Binding TimeElapsed}" FontSize="100" FontFamily="Sans" FontAttributes="Bold" TextColor="{StaticResource Accent}"/>
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="-10,0,0,0">
+                        <Image Source="calories_icon.png" HeightRequest="50" Margin="10,0,0,0"></Image>
+                        <Label Text="200" HorizontalTextAlignment="Center" TextColor="Orange" FontAttributes="Bold" FontFamily="Sans"></Label>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="5">
+                <ImageButton Source="play_icon.png" HeightRequest="70" BackgroundColor="#2ecc71" CornerRadius="35" WidthRequest="70" Padding="15"
+                    Command = "{Binding StartWorkoutCommand}"/>
+                <ImageButton Source="pause_icon.png" HeightRequest="70" BackgroundColor="{StaticResource Gray300}" CornerRadius="35" WidthRequest="70" Padding="15"
+                    Command="{Binding ToggleTimerCommand}"/>
+                <ImageButton Source="stop_icon.png" HeightRequest="70" BackgroundColor="#f64747" CornerRadius="35" WidthRequest="70"
+                    Command="{Binding EndWorkoutCommand}"/>
+                <Button Text="End" HeightRequest="70" BackgroundColor="{StaticResource AccentSecondary}" CornerRadius="20" WidthRequest="70"
+                    Command="{Binding GoToSummaryCommand}"/>
+            </HorizontalStackLayout>
+        </StackLayout>
+        <CollectionView
+            ItemsSource="{Binding CurrentWorkout.ExerciseList}"
+            SelectionMode="None"
+            Grid.Row="1">
+            <CollectionView.EmptyView>
+                <Label
+                Text="No exercises in the workout"/>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Exercise">
+                    <Grid Padding="0">
+                        <Border HeightRequest="125"
+                              Padding="0"
+                              Style="{StaticResource AccentSecondaryWidgetBorder}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CompletedExerciseCommand}"/>
+                            </Border.GestureRecognizers>
+                            <Grid
+                                 ColumnDefinitions="Auto,Auto,*">
+
+                                <Frame BackgroundColor="Transparent"
+                                       BorderColor="Transparent">
+                                    <CheckBox x:Name="checkBox" 
+                                          IsChecked="{Binding Completed}" 
+                                          Color="{StaticResource Accent}" 
+                                          Scale="2"/>
+                                </Frame>
+                                <VerticalStackLayout Grid.Column="1"
+                                                    VerticalOptions="Center"
+                                                    WidthRequest="200">
+                                    <Label Text="{Binding Name}"
+                                          Style="{StaticResource LargeLabel}" TextColor="{StaticResource Accent}" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Sets, StringFormat='Sets: {0}'}"
+                                          Style="{StaticResource MediumLabel}" TextColor="{StaticResource AccentSecondary}"/>
+                                    <Label Text="{Binding Reps, StringFormat='Reps: {0}'}" TextColor="{StaticResource AccentSecondary}"
+                                          Style="{StaticResource MediumLabel}"/>
+                                    <Label Text="{Binding Weight, StringFormat='Weight: {0}lb'}" TextColor="{StaticResource AccentSecondary}"
+                                          Style="{StaticResource MediumLabel}"/>
+                                </VerticalStackLayout>
+
+                                <Button Grid.Column="2" WidthRequest="60" HeightRequest="60" Text="Edit" BackgroundColor="{StaticResource AccentSecondary}"/>  
+                            </Grid>
+
+                            <Border.Triggers>
+                                <DataTrigger TargetType="Border" Binding="{Binding Source={x:Reference checkBox}, Path=IsChecked}" Value="True">
+                                    <Setter Property="Style" Value="{StaticResource PrimaryWidgetBorder}" />
+                                </DataTrigger>
+                            </Border.Triggers>
+
+                        </Border>
+
+                    </Grid>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+
+
+</ContentPage>
+
+
+<!--<VerticalStackLayout Spacing="10">
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="{Binding Title}"/>
+            <Label Text="{Binding TimeElapsed}"/>
+
+        </HorizontalStackLayout>
+        <Button Text="Start Workout"
+                Command = "{Binding StartWorkoutCommand}"/>
+        <Button Text="Toggle Timer"
+                Command="{Binding ToggleTimerCommand}"/>
+        <Button Text="End Workout"
+                Command="{Binding EndWorkoutCommand}"/>
+        
+        <Button Text="Summary"
+                Command="{Binding GoToSummaryCommand}"/>
+
+        
+    </VerticalStackLayout>-->
+
+

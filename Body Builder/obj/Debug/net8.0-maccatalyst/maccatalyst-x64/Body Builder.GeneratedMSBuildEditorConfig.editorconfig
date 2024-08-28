@@ -1,0 +1,77 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Body_Builder
+build_property.ProjectDir = C:\Users\facun\source\repos\Body Builder\Body Builder\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/View/AchievementsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.View.AchievementsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\AchievementsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\AchievementsPage.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/View/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.View.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\HomePage.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/View/MakeWorkoutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.View.MakeWorkoutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\MakeWorkoutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\MakeWorkoutPage.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/View/SummaryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.View.SummaryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\SummaryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\SummaryPage.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/View/WorkingOutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.View.WorkingOutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\WorkingOutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\WorkingOutPage.xaml
+
+[C:/Users/facun/source/repos/Body Builder/Body Builder/View/WorkoutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Body_Builder.View.WorkoutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View\WorkoutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View\WorkoutPage.xaml

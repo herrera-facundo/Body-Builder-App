@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Body_Builder.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Body_Builder"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Body_Builder"
+    BackgroundColor="#1a1a1a"
+    FlyoutBackgroundColor="#1a1a1a"
+    Shell.TabBarBackgroundColor="#1a1a1a"
+    Shell.TabBarForegroundColor="#04c4c1"
+    Shell.TabBarUnselectedColor="White"
+    Shell.TabBarTitleColor="#04c4c1">
+
+    <TabBar Title="Home" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:HomePage}"
+        Route="HomePage" 
+        Icon="home_icon.png"/>
+
+        <ShellContent
+        Title="Workout"
+        ContentTemplate="{DataTemplate local:WorkoutPage}"
+        Route="WorkoutPage"
+        Icon="exercise_icon.png" />
+
+        <ShellContent
+        Title="Achievements"
+        ContentTemplate="{DataTemplate local:AchievementsPage}"
+        Route="AchievementsPage"
+        Icon="achievement.png" />
+    </TabBar>
+
+    <Shell.TitleView>
+        <Grid BackgroundColor="#1a1a1a">
+            <Image Source="https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png" Scale="0.7" Margin="-12,0,0,0" HorizontalOptions="Start" VerticalOptions="Center">
+            </Image>
+            <Border BackgroundColor="{StaticResource Gray600}" Margin="-10,0,0,0" Padding="5" StrokeShape="RoundRectangle 10" Stroke="{StaticResource AccentSecondary}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Level 2" Margin="0,0,10,0" TextColor="{StaticResource Accent}" />
+                    <ProgressBar Progress="0.9" ProgressColor="{StaticResource Accent}" BackgroundColor="{StaticResource Gray600}" WidthRequest="100" HeightRequest="20" />
+                    <Label Text=" Level 3" Margin="10,0,0,0" TextColor="{StaticResource Accent}" />
+                </StackLayout>
+            </Border>
+            <!-- Right icon -->
+            <Image Source="https://cdn.iconscout.com/icon/free/png-256/free-earth-globe-meridians-world-33880.png" Scale="0.6" Margin="0,0,0,0" HorizontalOptions="End" VerticalOptions="Center"  />
+        </Grid>
+
+    </Shell.TitleView>
+
+</Shell>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Body_Builder.Model"
+             x:Class="Body_Builder.WorkoutPage"
+             BackgroundColor="{StaticResource MainBackground}"
+             xmlns:viewmodel="clr-namespace:Body_Builder.ViewModel"
+             x:DataType="viewmodel:WorkoutVM">
+
+    <Grid
+          ColumnSpacing="5"
+          RowDefinitions="Auto,*"
+          RowSpacing="5"
+          Padding="10">
+        <HorizontalStackLayout Spacing="50">
+            <Label Text="Choose a Workout" TextColor="LightGray" Margin="10,10,0,0" FontSize="35" FontAttributes="Bold" FontFamily="Sans"></Label>
+            <Button Text="Create a Workout" Command="{Binding GoToMakeWorkoutCommand}"/>
+        </HorizontalStackLayout>
+        <CollectionView
+            ItemsSource="{Binding Manager.WorkoutList}"
+            SelectionMode="None"
+            Grid.Row="1">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Workout">
+                    <Grid Padding="0">
+                        <Border HeightRequest="125"
+                              Padding="0"
+                              Style="{StaticResource AccentSecondaryWidgetBorder}">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding GoToWorkingOutCommand}"/>
+                            </Border.GestureRecognizers>
+                            <HorizontalStackLayout Spacing="50">
+                                <VerticalStackLayout VerticalOptions="Center" Padding="30,0,0,0">
+                                    <Label Text="{Binding Title}"
+                                    FontSize="30"
+                                    Style="{StaticResource LargeLabel}"
+                                    TextColor="{StaticResource Accent}"
+                                    FontAttributes="Bold"
+                                    FontFamily="Sans"/>
+
+                                    <Label Text="{Binding ExerciseList.Count, StringFormat='{0} excerises'}"
+                                    Style="{StaticResource MediumLabel}"
+                                    TextColor="{StaticResource AccentSecondary}"
+                                    FontAttributes="Italic"
+                                    FontFamily="Sans"/>
+
+                                    <Label Text="{Binding Date, StringFormat='Created on {0}'}"
+                                    Style="{StaticResource MediumLabel}"
+                                    TextColor="{StaticResource AccentSecondary}"
+                                    FontAttributes="Italic"
+                                    FontFamily="Sans"/>
+                                </VerticalStackLayout>
+                                <Button
+                                    Text="-"
+                                    FontSize="60"
+                                    BackgroundColor="Red"
+                                    HeightRequest="40"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:WorkoutVM}}, Path=DeleteWorkoutCommand}"
+                                    CommandParameter="{Binding .}"/>
+                            </HorizontalStackLayout>
+                        </Border>
+
+                    </Grid>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
